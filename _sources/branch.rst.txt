@@ -1,0 +1,21 @@
+========================
+完成开发并提交新的分支
+========================
+
+开发需求确定后，开发人员可以在本地仓库应用应用分支并完成相应的开发工作。
+
+(由于流程规模较大，泛癌流程在dx_cancer账户下提供了一套公共的开发环境，亦可在个人目录下拉取完整的流程以确保同时进行多项工作时无冲突发生)。
+
+::
+
+    git clone ssh://git@gitlab.genomics.cn:2200/Oseq/co-development.git
+    # 更改主分支的名称 / 创建新的分支
+    git branch -m "development"
+    # 将本地开发分支推送到中心Git Repository (该过程不影响主分支的内容)
+    git push origin development
+
+
+如下图所示，在名为development 的分支上进行了若干修改：
+
+
+.. image:: images/branch-1.png

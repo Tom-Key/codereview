@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>流程版本号使用建议(暂) &mdash; BGI Tumour R&amp;D Co-development Protocol  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="在泛癌流程中的应用示例" href="aio-example.html" />
+    <link rel="prev" title="Code Review 进行合并分支" href="merge.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> BGI Tumour R&D Co-development Protocol
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issue.html">ISSUE创建及开发任务的划分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branch.html">完成开发并提交新的分支</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codereview.html">代码审核项目及测试文档的输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merge.html">Code Review 进行合并分支</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">流程版本号使用建议(暂)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">版本号</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#x-0-0-0">x.0.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-0-0">0.x.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-0">0.0.x.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x">0.0.0.x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">变更的类型</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#git-tag">git tag</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aio-example.html">在泛癌流程中的应用示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lungct-example.html">在肺癌流程中的应用示例</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BGI Tumour R&D Co-development Protocol</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>流程版本号使用建议(暂)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tag.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>流程版本号使用建议(暂)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>多个分支同时进行开发难以避免有潜在冲突的发生，建议将原有基于commit对流程版本号进行声明的工作移植到git tag进行声明。
+接受完成特定修改的branch后可以对版本号进行标记，临床分析、药厂、IVD等场景下的流程建议使用版本号声明完备的流程，在分析时妥善记录相应样本使用的分析流程版本以确保分析过程的可追溯性及结果的可复现性。</p>
+<p>对于版本号的使用具有特殊要求的应用场景请妥善处理流程git版本号与项目下文控版本号的映射关系。</p>
+<div class="section" id="id2">
+<h2>版本号<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>产品研发阶段版本号起始于 0.0.0</p></li>
+<li><p>产品投入临床使用后版本号更新至 1.0.0</p></li>
+</ul>
+<div class="section" id="x-0-0-0">
+<h3>x.0.0.0<a class="headerlink" href="#x-0-0-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>仅当流程/软件(下同)发生了Pachakutiq的变化(流程检测内容或适用产品出现重大变更，流程整体框架重构)时，方才更新首位版本号</p></li>
+</ul>
+</div>
+<div class="section" id="x-0-0">
+<h3>0.x.0.0<a class="headerlink" href="#x-0-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>当输入输出格式以及关键内容发生了变化(会对除生信内核外上、下游衔接模块造成直接或间接影响)或变异检测结果发生变化时，更新第二位版本号</p></li>
+</ul>
+</div>
+<div class="section" id="x-0">
+<h3>0.0.x.0<a class="headerlink" href="#x-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>进行未涉及接口及结果其他修改时，更新第三位版本号</p></li>
+</ul>
+</div>
+<div class="section" id="x">
+<h3>0.0.0.x<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>在master上继承并延续实现特定需求的分支</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>变更的类型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>FEAT 输入输出结果的变更/变异检测结果的变更</p></li>
+<li><p>perf/refactor 其他功能的升级/代码的重构</p></li>
+<li><p>build 特定版本下编译封装后得到的软件包</p></li>
+<li><p>docs 说明文档及注释的变更</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="git-tag">
+<h2>git tag<a class="headerlink" href="#git-tag" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 为当下/既往的commit添加标签</span>
+<span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">a</span> <span class="n">v1</span><span class="o">.</span><span class="mi">4</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;my version 1.4&quot;</span>  <span class="mi">9</span><span class="n">fceb02</span>
+<span class="c1"># 查看某个标签所指向的文件版本</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">v1</span><span class="o">.</span><span class="mi">4</span>
+<span class="c1"># 显式地推送标签到共享服务器上</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">tagname</span><span class="o">&gt;</span>
+<span class="c1"># 删除标签</span>
+<span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">d</span> <span class="o">&lt;</span><span class="n">tagname</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="o">&lt;</span><span class="n">tagname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<img alt="_images/tag-1.png" src="_images/tag-1.png" />
+<img alt="_images/tag-2.png" src="_images/tag-2.png" />
+<img alt="_images/tag-3.png" src="_images/tag-3.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="aio-example.html" class="btn btn-neutral float-right" title="在泛癌流程中的应用示例" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="merge.html" class="btn btn-neutral float-left" title="Code Review 进行合并分支" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, BGI All Rights Reserved.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

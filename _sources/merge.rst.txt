@@ -1,0 +1,18 @@
+===========================
+Code Review 进行合并分支
+===========================
+
+完成修改并提交分支后，即可回到Issue内分支内发起分支合并。
+
+选择需要合并入master 的分支上
+
+.. image:: images/merge-1.png
+
+须注意的是，分支合并前需要进行必要的Code Review ，建议由代码审核者发起分支合并，并填写好相关人员信息。
+
+.. image:: images/merge-2.png
+
+填写好相关信息后，相关项目负责人对Merge Request 内容审核通过后即可合入主分支。
+
+.. image:: images/merge-3.png
+(在 Merge Request Titile 声明 Fix #issue number 可以将之与issue相关联)
